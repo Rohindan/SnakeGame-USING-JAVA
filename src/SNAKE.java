@@ -35,7 +35,7 @@ public class SNAKE{
 
 
     SNAKE(){
-        frame.setVisible(true);
+
         frame.setTitle("Snake");
         frame.setSize(WINDOW_WIDTH,WINDOW_HEIGHT);
         frame.setResizable(false);
@@ -46,6 +46,9 @@ public class SNAKE{
         panel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
         frame.add(panel);
         frame.pack();
+
+        frame.setVisible(true);
+        panel.requestFocusInWindow();
 
     }
 
@@ -70,7 +73,8 @@ public class SNAKE{
 
         GamePanel(){
             addKeyListener(new KeyAdapter() {
-                public void keyRelease(KeyEvent e){
+                @Override
+                public void keyReleased(KeyEvent e){
                     change_direction(e);
                 }
             });
@@ -144,20 +148,18 @@ public class SNAKE{
         }
 
         void draw(Graphics g){
-            repaint();
 
             g.setColor(Color.red);
-            g.fillRect(food.x,food.y,food.x + TILE_SIZE, food.y + TILE_SIZE);
+            g.fillRect(food.x,food.y, TILE_SIZE, TILE_SIZE);
 
             g.setColor(Color.green);
-            g.fillRect(snake.x, snake.y, snake.x + TILE_SIZE, snake.y + TILE_SIZE);
+            g.fillRect(snake.x, snake.y, TILE_SIZE, TILE_SIZE);
 
-            g.setColor(Color.red);
-            g.fillRect(food.x,food.y,food.x + TILE_SIZE, food.y + TILE_SIZE);
+
 
             for(Tile tile : snake_body){
                 g.setColor(Color.green);
-                g.fillRect(tile.x, tile.y,tile.x + TILE_SIZE, tile.y + TILE_SIZE);
+                g.fillRect(tile.x, tile.y, TILE_SIZE,  TILE_SIZE);
             }
             if(game_over){
                 g.setColor(Color.white);
@@ -167,7 +169,7 @@ public class SNAKE{
             else{
                 g.setColor(Color.white);
                 g.setFont(new Font("Arial",Font.PLAIN,10));
-                g.drawString("Game Over: "+score,30,20);
+                g.drawString("Score : "+score,30,20);
             }
 
         }
