@@ -81,5 +81,5 @@ The goal was to strengthen my understanding of Java, improve my problem-solving 
 * Add difficulty levels
 * Add a high-score system
 * Improve the user interface
-* Add sound effects
+* Add sound effects.
 * Siuuuuuuuuv
