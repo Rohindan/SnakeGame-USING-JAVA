@@ -4,7 +4,7 @@ A classic **Snake Game built using Java Swing**.
 
 I originally created this Snake Game in Python using Tkinter. As a learning challenge, I rebuilt the same game in Java by understanding the Python logic and translating it into Java concepts.
 
-This project helped me practice Java Swing, object-oriented programming, keyboard events, game loops, collision detection, and working with `ArrayList`
+This project helped me practice Java Swing, object-oriented programming, keyboard events, game loops, collision detection, and working with `ArrayList`.
 
 ## 🎮 Features
 
